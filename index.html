@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8">
+    <title> missing function in firefox 29 </title>
+    <style>
+      code {
+        background-color: #f80;
+        color: white;
+        padding: 3px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> lazy Firefox 29 </h1>
+    <p>if you declare a function in a <code>if() {}</code> block, firefox would complain the function not defined</p>
+    <strong>also, <code>try...catch</code> can not catch this exception =(</strong>
+    <p> for more infomation, open your devtool and have a look at source code of this page in Firefox 29(.0.1)</p>
+    <script>
+      try {
+        missingFunctionInFirefox();
+      } catch(e) {
+        console.log(e);
+      }
+
+      if (true) {
+        function missingFunctionInFirefox() {
+          console.log('where am I?');
+        }
+      }
+    </script>
+  </body>
+</html>
